@@ -1,0 +1,19 @@
+<div>
+  <label for="time-span">Time span</label>
+  <input
+    type="number"
+    name="time-span"
+    id="time-span"
+    [(ngModel)]="timeSpan"
+    (change)="onTimeSpanChange()"
+  />
+  <label for="field-size">Field size</label>
+  <input
+    type="number"
+    name="field-size"
+    id="field-size"
+    [(ngModel)]="size"
+    (change)="onSizeChange()"
+  />
+  <button (click)="onStart()">Start</button>
+</div>

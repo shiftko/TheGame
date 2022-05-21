@@ -1,0 +1,8 @@
+<div>
+  <app-mini-game-header
+    [(timeSpan)]="timeSpan"
+    [(size)]="size"
+    (start)="runGame()"
+  ></app-mini-game-header>
+  <app-mini-game-field [size]="size"></app-mini-game-field>
+</div>
