@@ -1,8 +1,12 @@
 <div>
   <app-mini-game-header
     [(timeSpan)]="timeSpan"
-    [(size)]="size"
-    (start)="runGame()"
+    [(gridSize)]="gridSize"
+    [(inProgress)]="inProgress"
   ></app-mini-game-header>
-  <app-mini-game-field [size]="size"></app-mini-game-field>
+  <app-mini-game-grid
+    [timeSpan]="timeSpan"
+    [gridSize]="gridSize"
+    [inProgress]="inProgress"
+  ></app-mini-game-grid>
 </div>

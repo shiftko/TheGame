@@ -2,19 +2,3 @@
   border-radius: 0.25rem;
   aspect-ratio: 1;
 }
-
-.cell-default {
-  background-color: lightblue;
-}
-
-.cell-active {
-  background-color: yellow;
-}
-
-.cell-caught {
-  background-color: lightgreen;
-}
-
-.cell-missed {
-  background-color: lightcoral;
-}

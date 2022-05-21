@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Default } from './core/default';
 
 @Component({
   selector: 'app-mini-game',
   templateUrl: './mini-game.component.html',
   styleUrls: ['./mini-game.component.css'],
 })
-export class MiniGameComponent implements OnInit {
-  size: number = 3;
-  timeSpan: number = 666;
-
-  constructor() {}
-
-  ngOnInit(): void {}
-  runGame(): void {
-    console.log(`--> runGame with time span: ${this.timeSpan}`);
-    console.log(`--> runGame with field size: ${this.size}`);
-  }
+export class MiniGameComponent {
+  inProgress: boolean = false;
+  gridSize: number = Default.gridSize;
+  timeSpan: number = Default.timeSpan;
 }

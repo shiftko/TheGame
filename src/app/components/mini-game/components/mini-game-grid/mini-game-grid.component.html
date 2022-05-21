@@ -1,0 +1,9 @@
+<div class="content">
+  <div [style]="wrapper">
+    <app-mini-game-cell
+      *ngFor="let cell of cells"
+      [cellRef]="cell"
+      (click)="cellClick(cell)"
+    ></app-mini-game-cell>
+  </div>
+</div>

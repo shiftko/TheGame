@@ -1,4 +1,4 @@
-<div>
+<div class="mini-game-header">
   <label for="time-span">Time span</label>
   <input
     type="number"
@@ -6,14 +6,17 @@
     id="time-span"
     [(ngModel)]="timeSpan"
     (change)="onTimeSpanChange()"
+    [disabled]="inProgress"
   />
   <label for="field-size">Field size</label>
   <input
     type="number"
     name="field-size"
     id="field-size"
-    [(ngModel)]="size"
-    (change)="onSizeChange()"
+    [(ngModel)]="gridSize"
+    (change)="onGridSizeChange()"
+    [disabled]="inProgress"
   />
-  <button (click)="onStart()">Start</button>
+  <button *ngIf="!inProgress" (click)="onStart()">Start</button>
+  <button *ngIf="inProgress" (click)="onStop()">Stop</button>
 </div>

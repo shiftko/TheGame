@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MiniGameFieldComponent } from './mini-game-field.component';
+import { MiniGameGridComponent } from './mini-game-grid.component';
 
-describe('MiniGameFieldComponent', () => {
-  let component: MiniGameFieldComponent;
-  let fixture: ComponentFixture<MiniGameFieldComponent>;
+describe('MiniGameGridComponent', () => {
+  let component: MiniGameGridComponent;
+  let fixture: ComponentFixture<MiniGameGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MiniGameFieldComponent],
+      declarations: [MiniGameGridComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MiniGameFieldComponent);
+    fixture = TestBed.createComponent(MiniGameGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

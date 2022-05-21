@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { MiniGameCellComponent } from './components/mini-game/components/mini-game-cell/mini-game-cell.component';
-import { MiniGameFieldComponent } from './components/mini-game/components/mini-game-field/mini-game-field.component';
+import { MiniGameGridComponent } from './components/mini-game/components/mini-game-grid/mini-game-grid.component';
 import { MiniGameHeaderComponent } from './components/mini-game/components/mini-game-header/mini-game-header.component';
 import { MiniGameComponent } from './components/mini-game/mini-game.component';
 
@@ -16,8 +16,8 @@ import { MiniGameComponent } from './components/mini-game/mini-game.component';
     MainComponent,
     MiniGameComponent,
     MiniGameCellComponent,
-    MiniGameFieldComponent,
     MiniGameHeaderComponent,
+    MiniGameGridComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
