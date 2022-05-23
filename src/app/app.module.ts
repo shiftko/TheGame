@@ -7,7 +7,11 @@ import { MainComponent } from './components/main/main.component';
 import { MiniGameCellComponent } from './components/mini-game/components/mini-game-cell/mini-game-cell.component';
 import { MiniGameGridComponent } from './components/mini-game/components/mini-game-grid/mini-game-grid.component';
 import { MiniGameHeaderComponent } from './components/mini-game/components/mini-game-header/mini-game-header.component';
+import { MiniGameModalComponent } from './components/mini-game/components/mini-game-modal/mini-game-modal.component';
+import { MiniGameScoreComponent } from './components/mini-game/components/mini-game-score/mini-game-score.component';
 import { MiniGameComponent } from './components/mini-game/mini-game.component';
+import { DataService } from './components/mini-game/services/data.service';
+import { ModalService } from './components/mini-game/services/modal.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +22,11 @@ import { MiniGameComponent } from './components/mini-game/mini-game.component';
     MiniGameCellComponent,
     MiniGameHeaderComponent,
     MiniGameGridComponent,
+    MiniGameScoreComponent,
+    MiniGameModalComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [DataService, ModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

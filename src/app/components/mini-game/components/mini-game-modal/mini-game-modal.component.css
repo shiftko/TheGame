@@ -1,0 +1,85 @@
+.modal-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4f4f4f;
+  opacity: 0.3;
+}
+.modal-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  width: 400px;
+  height: 300px;
+  background-color: #f4f4f4;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal-header {
+  display: flex;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgb(222, 226, 230);
+  display: flex;
+  align-items: center;
+}
+.modal-header h5 {
+  flex: auto;
+  margin: 0;
+}
+.modal-header .btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+    center/1em auto no-repeat;
+  border: 0;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+}
+.modal-body {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-footer {
+  border-top: 1px solid rgb(222, 226, 230);
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

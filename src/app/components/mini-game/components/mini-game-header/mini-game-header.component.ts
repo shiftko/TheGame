@@ -19,7 +19,7 @@ export class MiniGameHeaderComponent {
     this.inProgressChange.emit(true);
   }
 
-  onStop(): void {
+  onReset(): void {
     this.inProgressChange.emit(false);
   }
 

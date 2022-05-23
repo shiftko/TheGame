@@ -1,4 +1,4 @@
-<div class="mini-game-header">
+<div class="content">
   <label for="time-span">Time span</label>
   <input
     type="number"
@@ -18,5 +18,5 @@
     [disabled]="inProgress"
   />
   <button *ngIf="!inProgress" (click)="onStart()">Start</button>
-  <button *ngIf="inProgress" (click)="onStop()">Stop</button>
+  <button *ngIf="inProgress" (click)="onReset()">Reset</button>
 </div>

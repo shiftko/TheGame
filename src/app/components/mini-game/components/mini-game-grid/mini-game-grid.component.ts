@@ -8,6 +8,7 @@ import {
 import { Default } from '../../core/default';
 import { Cell } from '../../models/Cell';
 import { ICell } from '../../models/ICell';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-mini-game-grid',
@@ -22,6 +23,8 @@ export class MiniGameGridComponent implements OnInit, OnChanges {
   cells: ICell[] = [];
   cellInUse: ICell = new Cell();
   timeoutID?: number;
+  userScore: number = 0;
+  cpuScore: number = 0;
 
   get wrapper() {
     return {
@@ -35,6 +38,8 @@ export class MiniGameGridComponent implements OnInit, OnChanges {
   get cellsCount(): number {
     return Math.pow(this.gridSize, 2);
   }
+
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
     this.generateGrid();
@@ -76,16 +81,37 @@ export class MiniGameGridComponent implements OnInit, OnChanges {
     });
   }
 
+  noWinner(): boolean {
+    return this.userScore < 10 && this.cpuScore < 10;
+  }
+
+  showWinner(): void {
+    let winner = 'undefined';
+    if (this.userScore >= 10) {
+      this.modalService.openBase('Congratulations, you have won!');
+    } else if (this.cpuScore >= 10) {
+      this.modalService.openBase('You lost.');
+    }
+    console.log(`--> winner ${winner}`);
+  }
   handleRunning(): void {
-    let cellsToPlay: ICell[] = this.cells.filter((cell) => cell.isAvailable);
-    if (cellsToPlay.length) {
-      this.cellInUse = this.getRandomCell(cellsToPlay);
-      this.cellInUse.setActive();
-      this.timeoutID = window.setTimeout(() => {
-        this.timeoutID = undefined;
-        this.cellInUse.setMissed();
-        this.handleRunning();
-      }, this.timeSpan);
+    if (this.noWinner()) {
+      let cellsToPlay: ICell[] = this.cells.filter((cell) => cell.isAvailable);
+      if (cellsToPlay.length) {
+        this.cellInUse = this.getRandomCell(cellsToPlay);
+        this.cellInUse.setActive();
+        this.timeoutID = window.setTimeout(() => {
+          this.timeoutID = undefined;
+          this.cellInUse.setMissed();
+          this.cpuScore++;
+          this.handleRunning();
+        }, this.timeSpan);
+      }
+    } else {
+      this.showWinner();
+      this.timeoutID = undefined;
+      this.userScore = 0;
+      this.cpuScore = 0;
     }
   }
 
@@ -98,6 +124,7 @@ export class MiniGameGridComponent implements OnInit, OnChanges {
       window.clearTimeout(this.timeoutID);
       this.timeoutID = undefined;
       this.cellInUse.setCaught();
+      this.userScore++;
       this.handleRunning();
     }
   }
